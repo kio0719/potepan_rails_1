@@ -23,8 +23,8 @@
       <tr>
         <td><%= post.id %></td>
         <td><%= post.title %></td>
-        <td><%= post.start_date %></td>
-        <td><%= post.end_date %></td>
+        <td><%= post.start_date.to_s(:datetime_jp) %></td>
+        <td><%= post.end_date.to_s(:datetime_jp) %></td>
         <td>
           <% if post.all_day %>
             ○
@@ -32,7 +32,7 @@
             
           <% end %>
         </td>
-        <td><%= post.updated_at.to_s(:datetime_jp)  %></td>
+        <td><%= post.updated_at.to_s(:updated_at)  %></td>
         <td><%= link_to "詳細",post %></td>
         <td><%= link_to "編集",[:edit,post] %></td>
         <td><%= link_to "削除",post,method: :delete,data:{confirm:"本当に削除しますか？"} %></td>

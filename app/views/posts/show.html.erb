@@ -5,11 +5,11 @@
 <table>
     <tr>
       <th>開始日</th>
-      <td><%= @post.start_date %></td>
+      <td><%= @post.start_date.to_s(:datetime_jp) %></td>
     <tr>
     <tr>
       <th>終了日</th>
-      <td><%= @post.end_date %></td>
+      <td><%= @post.end_date.to_s(:datetime_jp) %></td>
     </tr>
     <tr>
       <th>終日</th>
