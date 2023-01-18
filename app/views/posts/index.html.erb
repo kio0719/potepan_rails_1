@@ -1,10 +1,13 @@
-<h3>予定一覧</h3>
+<div class="index_top">
+  <h3 class="title">予定一覧</h3>
+  <div><%= link_to "新規追加",:new_post,{class:"button"} %></div>
+</div>
 
 <% if flash[:notice] %>
 <p class="notice"><%= flash[:notice] %></p>
 <% end %>
 
-<table>
+<table class="index_table">
   <thead>
     <tr>
       <th>ID</th>
@@ -41,10 +44,9 @@
   </tbody>
 </table>
 
-<p><%= link_to "新規追加",:new_post %></p>
-
-<div>
-  <div>予定合計<%= @count %>件</div>
+<div class="index_bottom">
+  <div>予定合計<span class="count"><%= @count %></span>件</div>
   <div>本日の日付 <%= @today %></div>
 </div>
+
 
