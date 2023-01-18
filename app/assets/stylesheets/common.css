@@ -9,6 +9,15 @@ table th {
   }
   
   .notice {
-    background-color: #ccf;
+    background-color: #000;
+    color:#fff;
+    width:300px;
     padding: 5px;
+  }
+
+  .warming{
+    background-color:	#CD5C5C;
+    color:#fff;
+    width:300px;
+    padding: 10px;
   }

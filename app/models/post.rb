@@ -7,7 +7,7 @@ class Post < ApplicationRecord
 
   def start_end_check
     if start_date && end_date
-      errors.add(:end_date,"は開始日以降の日付を記入してください。") if self.start_date > self.end_date
+      errors.add(:end_date,"は開始日以降の日付を記入してください。") if self.start_date >= self.end_date
     end
   end
 

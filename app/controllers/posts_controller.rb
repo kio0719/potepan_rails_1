@@ -9,9 +9,10 @@ class PostsController < ApplicationController
     @post = Post.new(params.require(:post).permit(:title,:start_date,:end_date,:all_day,:memo))
     
     if @post.save
-      flash[:notice] = "スケジュールデータを登録しました。"
+      flash[:notice] = "スケジュールを登録しました。"
       redirect_to :posts
     else
+      flash[:warning] = "スケジュールの登録に失敗しました。"
       render "new"
     end
   end
@@ -24,14 +25,17 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(params.require(:post).permit(:title,:start_date,:end_date,:all_day,:memo))
+      flash[:notice] = "スケジュールを更新しました。"
       redirect_to :posts
     else
+      flash[:warning] = "スケジュールの更新に失敗しました。"
      render "edit"
     end
   end
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
+    flash[:notice] = "スケジュールを削除しました。"
     redirect_to :posts
   end
 end

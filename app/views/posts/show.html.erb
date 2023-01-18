@@ -13,7 +13,12 @@
     </tr>
     <tr>
       <th>終日</th>
-      <td><%= @post.all_day %></td>
+      <td>
+        <% if @post.all_day %>
+          ○
+        <% else %>
+        <% end %>
+       </td>
     </tr>
     <tr>
       <th>メモ</th>
